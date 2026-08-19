@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102f2b">
+  <title>Haulwise | Fleet intelligence</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">H</span><span>Haulwise</span></div>
+      <div class="sidebar-label">Prompt starters</div>
+      <div class="starter-list">
+        <button class="starter" data-question="What was the performance of LHD-003 on 2026-01-01?">Truck performance <span>></span></button>
+        <button class="starter" data-question="How much time did LHD-003 spend queueing between 1 PM and 2 PM on 2026-01-01?">Queue time <span>></span></button>
+        <button class="starter" data-question="Which three trucks moved the most tonnes on 2026-01-02?">Top tonnes <span>></span></button>
+        <button class="starter" data-question="How many cycles did the fleet complete on 2026-01-02?">Fleet cycles <span>></span></button>
+      </div>
+      <div class="sidebar-footer"><span class="status-dot"></span> Live read-only data</div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">OPERATIONS INTELLIGENCE</div>
+          <h1>Fleet performance</h1>
+        </div>
+        <div class="connection"><span class="status-dot"></span><span>Connected</span></div>
+      </header>
+
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome-message" id="welcome">
+          <div class="welcome-kicker">LHD FLEET / JAN 2026</div>
+          <h2>What would you like to inspect?</h2>
+          <p>Ask about cycles, tonnes, stage performance, or queue time across the fleet.</p>
+          <div class="welcome-rule"></div>
+        </div>
+      </section>
+
+      <form class="composer-wrap" id="ask-form">
+        <div class="composer">
+          <textarea id="question" rows="1" maxlength="1000" placeholder="Ask about truck performance..." aria-label="Question"></textarea>
+          <button class="ask-button" type="submit" aria-label="Ask question">Ask <span>></span></button>
+        </div>
+        <div class="composer-meta"><span>Read-only operational data</span><span id="char-count">0 / 1000</span></div>
+      </form>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
